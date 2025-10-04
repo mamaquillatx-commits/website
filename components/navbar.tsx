@@ -19,15 +19,15 @@ export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm">
       <div className="container mx-auto px-4 max-w-7xl">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-24">
           {/* Left: Logo */}
           <div className="flex items-center ">
             <Image
               src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Mama%20%281%29-DsCb1jBqtTKncCaUVjLSGZUAaeMMXe.png"
               alt="Mama Quilla"
-              width={120}
+              width={100}
               height={60}
-              className="h-18 w-auto"
+              className="h-28 w-auto"
             />
           </div>
 

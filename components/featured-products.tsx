@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { ShoppingCart, Sparkles } from "lucide-react"
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { ShoppingCart, Sparkles } from "lucide-react";
 
 const featuredProducts = [
   {
@@ -34,22 +34,27 @@ const featuredProducts = [
     featured: false,
     bgColor: "bg-gradient-to-br from-purple-50 to-pink-50",
   },
-]
+];
 
 export default function FeaturedProducts() {
   const handlePurchase = (productName: string, price: string) => {
-    const message = `Hola, me interesa comprar: ${productName} - ${price}`
-    window.open(`https://wa.me/15122033079?text=${encodeURIComponent(message)}`, "_blank")
-  }
+    const message = `Hola, me interesa comprar: ${productName} - ${price}`;
+    window.open(
+      `https://wa.me/15122033079?text=${encodeURIComponent(message)}`,
+      "_blank"
+    );
+  };
 
-  const mainProduct = featuredProducts[0]
-  const sideProducts = featuredProducts.slice(1)
+  const mainProduct = featuredProducts[0];
+  const sideProducts = featuredProducts.slice(1);
 
   return (
     <section id="productos" className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-[#1C1C1C] mb-4">Productos Estrella</h2>
+          <h2 className="text-4xl md:text-5xl font-bold text-[#1C1C1C] mb-4">
+            Recomendados
+          </h2>
           <div className="w-24 h-1 bg-[#E63946] mx-auto" />
         </div>
 
@@ -74,12 +79,18 @@ export default function FeaturedProducts() {
                   <p className="text-sm text-[#333333] uppercase tracking-wide mb-2 font-semibold">
                     {mainProduct.description}
                   </p>
-                  <p className="text-[#333333] mb-6 leading-relaxed">{mainProduct.tagline}</p>
+                  <p className="text-[#333333] mb-6 leading-relaxed">
+                    {mainProduct.tagline}
+                  </p>
                   <div className="flex items-center gap-4 mb-6">
-                    <span className="text-4xl font-bold text-[#E63946]">{mainProduct.price}</span>
+                    <span className="text-4xl font-bold text-[#E63946]">
+                      {mainProduct.price}
+                    </span>
                   </div>
                   <Button
-                    onClick={() => handlePurchase(mainProduct.name, mainProduct.price)}
+                    onClick={() =>
+                      handlePurchase(mainProduct.name, mainProduct.price)
+                    }
                     className="bg-[#E63946] hover:bg-[#C9A227] text-white px-8 py-6 text-lg font-semibold transition-all duration-300 w-fit group-hover:scale-105"
                   >
                     Comprar Ahora
@@ -126,14 +137,24 @@ export default function FeaturedProducts() {
                           {product.discount}
                         </span>
                       )}
-                      <h3 className="text-lg font-bold text-[#1C1C1C] mb-2 leading-tight">{product.name}</h3>
-                      <p className="text-xs text-[#333333] mb-3 leading-relaxed">{product.description}</p>
+                      <h3 className="text-lg font-bold text-[#1C1C1C] mb-2 leading-tight">
+                        {product.name}
+                      </h3>
+                      <p className="text-xs text-[#333333] mb-3 leading-relaxed">
+                        {product.description}
+                      </p>
                       <div className="flex items-center gap-2 mb-3">
-                        <span className="text-sm text-[#C9A227] font-semibold">Desde</span>
-                        <span className="text-2xl font-bold text-[#E63946]">{product.price}</span>
+                        <span className="text-sm text-[#C9A227] font-semibold">
+                          Desde
+                        </span>
+                        <span className="text-2xl font-bold text-[#E63946]">
+                          {product.price}
+                        </span>
                       </div>
                       <Button
-                        onClick={() => handlePurchase(product.name, product.price)}
+                        onClick={() =>
+                          handlePurchase(product.name, product.price)
+                        }
                         size="sm"
                         className="bg-[#E63946] hover:bg-[#C9A227] text-white transition-all duration-300 w-full group-hover:scale-105"
                       >
@@ -148,5 +169,5 @@ export default function FeaturedProducts() {
         </div>
       </div>
     </section>
-  )
+  );
 }
