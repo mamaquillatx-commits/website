@@ -14,7 +14,6 @@ import { WhatsAppFloat } from "@/components/whatsapp-float";
 export default function Home() {
   return (
     <>
-      <Navbar />
       <main className="min-h-screen">
         <Hero />
         <FeaturedProducts />
@@ -25,7 +24,6 @@ export default function Home() {
 
         <ContactForm />
         <FinalCTA />
-        <Footer />
       </main>
       <WhatsAppFloat />
     </>

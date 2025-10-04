@@ -1,53 +1,20 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
+import type React from "react";
+import Form from "./form";
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-
-    // Create WhatsApp message
-    const whatsappMessage = `*Nuevo Contacto desde Mama Quilla*%0A%0A*Nombre:* ${formData.name}%0A*Email:* ${formData.email}%0A*Teléfono:* ${formData.phone}%0A*Mensaje:* ${formData.message}`
-
-    // Open WhatsApp with the message
-    window.open(`https://wa.me/1234567890?text=${whatsappMessage}`, "_blank")
-
-    // Reset form
-    setTimeout(() => {
-      setFormData({ name: "", email: "", phone: "", message: "" })
-      setIsSubmitting(false)
-    }, 1000)
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value,
-    })
-  }
-
   return (
     <section id="contacto" className="py-16 bg-white">
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="text-center mb-12">
-          <h2 className="text-4xl font-bold mb-4 text-[#E63946]">Contáctanos</h2>
+          <h2 className="text-4xl font-bold mb-4 text-[#E63946]">
+            Contáctanos
+          </h2>
           <p className="text-lg text-[#333333] max-w-2xl mx-auto">
-            ¿Tienes alguna pregunta o necesitas ayuda? Estamos aquí para ti. Completa el formulario y nos pondremos en
-            contacto contigo lo antes posible.
+            ¿Tienes alguna pregunta o necesitas ayuda? Estamos aquí para ti.
+            Completa el formulario y nos pondremos en contacto contigo lo antes
+            posible.
           </p>
         </div>
 
@@ -55,11 +22,18 @@ export default function ContactForm() {
           {/* Contact Information */}
           <div className="space-y-8">
             <div>
-              <h3 className="text-2xl font-bold text-[#1C1C1C] mb-6">Información de Contacto</h3>
+              <h3 className="text-2xl font-bold text-[#1C1C1C] mb-6">
+                Información de Contacto
+              </h3>
               <div className="space-y-4">
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#F9F9F9] flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-[#C9A227]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-6 h-6 text-[#C9A227]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -69,14 +43,21 @@ export default function ContactForm() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#1C1C1C] mb-1">Teléfono</h4>
+                    <h4 className="font-semibold text-[#1C1C1C] mb-1">
+                      Teléfono
+                    </h4>
                     <p className="text-[#333333]">+1 (555) 123-4567</p>
                   </div>
                 </div>
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#F9F9F9] flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-[#C9A227]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-6 h-6 text-[#C9A227]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -93,7 +74,12 @@ export default function ContactForm() {
 
                 <div className="flex items-start gap-4">
                   <div className="w-12 h-12 rounded-full bg-[#F9F9F9] flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-[#C9A227]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <svg
+                      className="w-6 h-6 text-[#C9A227]"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                    >
                       <path
                         strokeLinecap="round"
                         strokeLinejoin="round"
@@ -103,16 +89,24 @@ export default function ContactForm() {
                     </svg>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-[#1C1C1C] mb-1">Horario de Atención</h4>
-                    <p className="text-[#333333]">Lunes a Viernes: 9:00 AM - 6:00 PM EST</p>
-                    <p className="text-[#333333]">Sábados: 10:00 AM - 4:00 PM EST</p>
+                    <h4 className="font-semibold text-[#1C1C1C] mb-1">
+                      Horario de Atención
+                    </h4>
+                    <p className="text-[#333333]">
+                      Lunes a Viernes: 9:00 AM - 6:00 PM EST
+                    </p>
+                    <p className="text-[#333333]">
+                      Sábados: 10:00 AM - 4:00 PM EST
+                    </p>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="bg-[#F9F9F9] p-6 rounded-lg">
-              <h4 className="font-semibold text-[#1C1C1C] mb-3">¿Por qué elegirnos?</h4>
+              <h4 className="font-semibold text-[#1C1C1C] mb-3">
+                ¿Por qué elegirnos?
+              </h4>
               <ul className="space-y-2 text-[#333333]">
                 <li className="flex items-start gap-2">
                   <span className="text-[#E63946] mt-1">✓</span>
@@ -132,7 +126,8 @@ export default function ContactForm() {
 
           {/* Contact Form */}
           <div className="bg-[#F9F9F9] p-8 rounded-lg">
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <Form />
+            {/* <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block text-sm font-semibold text-[#1C1C1C] mb-2">
                   Nombre Completo *
@@ -208,10 +203,10 @@ export default function ContactForm() {
               <p className="text-sm text-[#333333] text-center">
                 Al enviar este formulario, aceptas nuestra política de privacidad
               </p>
-            </form>
+            </form> */}
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }
