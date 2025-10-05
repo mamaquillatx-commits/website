@@ -18,7 +18,7 @@ export default function Home() {
       <main className="min-h-screen">
         <Hero />
 
-        <FeaturedProducts />
+        <ProductCatalog />
 
         <SponsorsSlider />
 
@@ -37,7 +37,6 @@ export default function Home() {
           width={1000}
         />
 
-        <ProductCatalog />
         <Testimonials />
 
         <ContactForm />

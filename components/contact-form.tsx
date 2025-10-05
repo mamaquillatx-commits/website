@@ -68,7 +68,7 @@ export default function ContactForm() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-[#1C1C1C] mb-1">Email</h4>
-                    <p className="text-[#333333]">contacto@mamaquilla.com</p>
+                    <p className="text-[#333333]">mamaquillatx@gmail.com</p>
                   </div>
                 </div>
 

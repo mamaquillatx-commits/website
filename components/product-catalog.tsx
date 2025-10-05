@@ -8,35 +8,54 @@ import { ShoppingCart } from "lucide-react";
 
 const categories = [
   {
+    name: "Recomendados",
+    products: [
+      {
+        name: "Inca Kola 2L",
+        image: "/ikp.png",
+      },
+      {
+        name: "Sibarita - Ají Amarillo ",
+        image: "/aas.png",
+      },
+      {
+        name: " Doña Isabel - Chicha Morada ",
+        image: "/cm.png",
+      },
+      {
+        name: "Gloria - Panetón",
+        image: "/pg.png",
+      },
+    ],
+  },
+
+  {
     name: "Condimentos y Ajíes",
     products: [
       {
-        name: "Inca Food - Aji Amarillo",
-        image: "/aji-amarillo-inca-food.jpg",
-        price: "$3.49",
+        name: "Inca's Food - Aji Amarillo",
+        image: "/icaa.png",
       },
-      { name: "Aji Panca", image: "/aji-panca-paste.jpg", price: "$3.49" },
-      { name: "Rocoto", image: "/rocoto-paste-jar.jpg", price: "$3.99" },
+      { name: "Inca's Food - Aji Panca", image: "/apc.png" },
+      { name: "Inca's Food - Rocoto", image: "/rin.png" },
       {
-        name: "Sibarita Ají Amarillo",
-        image: "/sibarita-aji-amarillo.jpg",
-        price: "$3.29",
+        name: "Sibarita - Ají Amarillo",
+        image: "/aas.png",
       },
     ],
   },
   {
     name: "Salsas y Conservas",
+
     products: [
-      { name: "Aceitunas", image: "/peruvian-olives-jar.jpg", price: "$4.99" },
+      { name: "Inca's Food - Aceitunas", image: "/ast.jpg" },
       {
-        name: "Papa Amarilla",
-        image: "/papa-amarilla-can.jpg",
-        price: "$2.99",
+        name: "Inca's Food - Papa Amarilla",
+        image: "/ppa.png",
       },
       {
-        name: "Maíz Chulpe",
-        image: "/placeholder.svg?height=250&width=250",
-        price: "$2.49",
+        name: "Inca's Food - Maíz Chulpe",
+        image: "/mzh.png",
       },
     ],
   },
@@ -44,29 +63,20 @@ const categories = [
     name: "Bebidas y Licores",
     products: [
       {
-        name: "Inca Kola 2lts",
-        image: "/placeholder.svg?height=250&width=250",
-        price: "$4.99",
+        name: "Inca Kola 2 lts.",
+        image: "/ic2k.png",
       },
       {
-        name: "Inca Kola Lata",
-        image: "/placeholder.svg?height=250&width=250",
-        price: "$1.99",
+        name: "Inca Kola 300 ml. - 12 y 24 und.",
+        image: "/ikp.png",
       },
       {
-        name: "Kola Inglesa",
-        image: "/placeholder.svg?height=250&width=250",
-        price: "$3.99",
-      },
-      {
-        name: "Chicha Morada",
-        image: "/chicha-morada-bottle.jpg",
-        price: "$5.99",
+        name: "Doña Isabel - Chicha Moradaa",
+        image: "/cm.png",
       },
       {
         name: "Bebida de Maracuyá",
-        image: "/placeholder.svg?height=250&width=250",
-        price: "$4.49",
+        image: "/jm.png",
       },
     ],
   },
@@ -74,34 +84,28 @@ const categories = [
     name: "Snacks y Dulces",
     products: [
       {
-        name: "Panetón Gloria",
-        image: "/placeholder.svg?height=250&width=250",
-        price: "$12.99",
+        name: "Gloria - Panetón",
+        image: "/pg.png",
       },
       {
-        name: "Turrones San José",
-        image: "/placeholder.svg?height=250&width=250",
-        price: "$7.99",
+        name: "San José - Turrones .De temporada",
+        image: "/ts.png",
       },
       {
-        name: "Turrón Doña Pepa",
-        image: "/placeholder.svg?height=250&width=250",
-        price: "$8.99",
+        name: "Doña Pepa - Turrón De temporada",
+        image: "/tp.png",
       },
       {
         name: "Alfajores",
-        image: "/placeholder.svg?height=250&width=250",
-        price: "$6.99",
+        image: "/alf.png",
       },
       {
-        name: "Lam's Tiras de Yuca",
-        image: "/placeholder.svg?height=250&width=250",
-        price: "$3.99",
+        name: "Lam's -  Tiras de Yuca",
+        image: "/lty.png",
       },
       {
         name: "Lam's Tiras de Plátano",
-        image: "/placeholder.svg?height=250&width=250",
-        price: "$3.99",
+        image: "/ltp.png",
       },
     ],
   },
@@ -110,16 +114,13 @@ const categories = [
 export default function ProductCatalog() {
   const [activeCategory, setActiveCategory] = useState(0);
 
-  const handlePurchase = (productName: string, price: string) => {
-    const message = `Hola, me interesa comprar: ${productName} - ${price}`;
-    window.open(
-      `https://wa.me/15122033079?text=${encodeURIComponent(message)}`,
-      "_blank"
-    );
+  // 🔹 Redirige directamente al perfil de Instagram
+  const handlePurchase = () => {
+    window.open("https://www.instagram.com/mamaquillatx/shop", "_blank");
   };
 
   return (
-    <section className="py-20 bg-white">
+    <section id="productos" className="py-20 bg-white">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-[#1C1C1C] mb-4">
@@ -168,16 +169,12 @@ export default function ProductCatalog() {
                     {product.name}
                   </h3>
                   <div className="flex items-center justify-between">
-                    <span className="text-2xl font-bold text-[#E63946]">
-                      {product.price}
-                    </span>
                     <Button
-                      onClick={() =>
-                        handlePurchase(product.name, product.price)
-                      }
+                      onClick={handlePurchase}
                       size="sm"
                       className="bg-[#E63946] hover:bg-[#C9A227] text-white transition-colors duration-300"
                     >
+                      Comprar ahora
                       <ShoppingCart className="w-4 h-4" />
                     </Button>
                   </div>

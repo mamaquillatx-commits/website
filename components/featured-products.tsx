@@ -158,7 +158,7 @@ export default function FeaturedProducts() {
                         size="sm"
                         className="bg-[#E63946] hover:bg-[#C9A227] text-white transition-all duration-300 w-full group-hover:scale-105"
                       >
-                        Comprar
+                        Comprar Ahora
                       </Button>
                     </div>
                   </div>

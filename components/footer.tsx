@@ -70,7 +70,7 @@ export default function Footer() {
                 <Instagram className="w-6 h-6" />
               </a>
               <a
-                href="https://www.facebook.com/mamaquillaustin"
+                href="https://www.facebook.com/mamaquillatx"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#C9A227] hover:text-[#E63946] transition-colors duration-300"

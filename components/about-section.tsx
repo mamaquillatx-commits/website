@@ -1,27 +1,42 @@
-"use client"
+"use client";
 
-import { Button } from "@/components/ui/button"
-import { Heart, Truck, Shield } from "lucide-react"
+import { Button } from "@/components/ui/button";
+import { Heart, Truck, Shield } from "lucide-react";
 
 export default function AboutSection() {
   const handleLearnMore = () => {
-    window.open("https://wa.me/15122033079?text=Hola,%20quiero%20conocer%20más%20sobre%20Mama%20Quilla", "_blank")
-  }
+    window.open(
+      "https://wa.me/15122033079?text=Hola,%20quiero%20conocer%20más%20sobre%20Mama%20Quilla",
+      "_blank"
+    );
+  };
 
   return (
     <section id="sobre-nosotros" className="py-20 bg-[#F9F9F9]">
       <div className="container mx-auto px-4 max-w-7xl">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div>
-            <h2 className="text-4xl md:text-5xl font-bold text-[#E63946] mb-6">¿Quiénes somos?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#E63946] mb-6">
+              ¿Quiénes somos?
+            </h2>
             <p className="text-lg text-[#1C1C1C] leading-relaxed mb-6">
-              Mama Quilla es tu tienda de confianza para importar y distribuir productos peruanos en todo Estados
-              Unidos. Traemos lo mejor de nuestra tierra para que sigas disfrutando los sabores, aromas y tradiciones
-              del Perú sin importar dónde estés.
+              En Mama Quilla llevamos la auténtica esencia del Perú directamente
+              a tu casa. Somos apasionados por compartir los sabores que nos
+              unen: desde el ají amarillo y las aceitunas botija, hasta los
+              turrones y bebidas que evocan tradición y alegría.
             </p>
             <p className="text-lg text-[#1C1C1C] leading-relaxed mb-8">
-              Cada producto es seleccionado cuidadosamente para garantizar la autenticidad y calidad que mereces. Porque
-              sabemos lo que significa extrañar el sabor de casa.
+              Seleccionamos cada producto con el corazón y con los más altos
+              estándares de calidad, para que disfrutes una experiencia genuina,
+              sin importar dónde te encuentres.
+            </p>
+            <p className="text-lg text-[#1C1C1C] leading-relaxed mb-8">
+              Nuestra tienda online es simple, segura y con envíos a todo el
+              país porque el verdadero sabor peruano no conoce fronteras.
+            </p>
+            <p className="text-lg text-[#1C1C1C] leading-relaxed mb-8">
+              Mama Quilla: más que productos, compartimos historias y celebramos
+              nuestra herencia culinaria.
             </p>
             <Button
               onClick={handleLearnMore}
@@ -40,9 +55,11 @@ export default function AboutSection() {
                 </div>
               </div>
               <div>
-                <h3 className="font-semibold text-xl mb-2 text-[#1C1C1C]">Productos Auténticos</h3>
+                <h3 className="font-semibold text-xl mb-2 text-[#1C1C1C]">
+                  Productos Auténticos
+                </h3>
                 <p className="text-[#1C1C1C]">
-                  Importamos directamente desde Perú para garantizar la autenticidad de cada producto.
+                  Garantizamos la autenticidad de cada producto.
                 </p>
               </div>
             </div>
@@ -54,9 +71,12 @@ export default function AboutSection() {
                 </div>
               </div>
               <div>
-                <h3 className="font-semibold text-xl mb-2 text-[#1C1C1C]">Envíos Rápidos</h3>
+                <h3 className="font-semibold text-xl mb-2 text-[#1C1C1C]">
+                  Envíos Rápidos
+                </h3>
                 <p className="text-[#1C1C1C]">
-                  Entrega en 2-5 días hábiles a todo Estados Unidos. Tu pedido llega fresco y seguro.
+                  Entrega en 2-5 días hábiles a todo Estados Unidos. Tu pedido
+                  llega fresco y seguro.
                 </p>
               </div>
             </div>
@@ -68,13 +88,18 @@ export default function AboutSection() {
                 </div>
               </div>
               <div>
-                <h3 className="font-semibold text-xl mb-2 text-[#1C1C1C]">Compra Segura</h3>
-                <p className="text-[#1C1C1C]">Pagos 100% seguros y garantía de satisfacción en todos tus pedidos.</p>
+                <h3 className="font-semibold text-xl mb-2 text-[#1C1C1C]">
+                  Compra Segura
+                </h3>
+                <p className="text-[#1C1C1C]">
+                  Pagos 100% seguros y garantía de satisfacción en todos tus
+                  pedidos.
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
-  )
+  );
 }

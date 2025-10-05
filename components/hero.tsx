@@ -60,7 +60,7 @@ export default function Hero() {
       {heroImages.map((image, index) => (
         <div
           key={index}
-          className={`absolute inset-0 transition-opacity duration-1000 ${
+          className={`absolute inset-0 transition-opacity duration-1000 blur-xs ${
             index === currentSlide ? "opacity-100" : "opacity-0"
           }`}
         >
@@ -71,7 +71,7 @@ export default function Hero() {
             className="object-cover"
             priority={index === 0}
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-r from-red-200 to-transparent" />
         </div>
       ))}
 
